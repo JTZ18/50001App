@@ -100,6 +100,7 @@ public class Register extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
                                         Toast.makeText(Register.this, "user created", Toast.LENGTH_SHORT).show();
+                                        //TODO: Redirect to Education page to get new user info
                                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                     }else{
                                         Toast.makeText(Register.this, "Failed to register", Toast.LENGTH_SHORT);
