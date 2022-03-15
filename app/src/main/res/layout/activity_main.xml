@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#A8A8A8"
             android:text="Button"
+            android:textColor="#4E342E"
             app:layout_constraintBottom_toTopOf="@+id/logout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
