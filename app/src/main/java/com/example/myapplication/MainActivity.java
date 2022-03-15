@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView textViewMsg;
 
-    final String node = "current_msg";
+    final String node = "test";
     // reference that points to a subtree, root in database, dictionary
     DatabaseReference mRootDatabaseRef;
     DatabaseReference mNodeRef;
