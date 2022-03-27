@@ -49,29 +49,29 @@ public class explore extends AppCompatActivity {
         addTaskButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                FragmentManager fragmentManager = getSupportFragmentManager();
-//                fragmentManager.beginTransaction()
-//                        .replace(R.id.fragmentContainerView, AddTaskFragment.class, null)
-//                        .setReorderingAllowed(true)
-//                        .addToBackStack("name")
-//                        .commit();
-//                FragmentContainerView fragmentContainerView = findViewById(R.id.fragmentContainerView);
-//                fragmentContainerView.setVisibility(View.VISIBLE);
-                TextView card = findViewById(R.id.textView2);
-                EditText newTodoView = findViewById(R.id.editTextValue);
-                EditText descriptionView = findViewById(R.id.editTextValue2);
-                EditText startDateTimeView = findViewById(R.id.editTextValue3);
-                EditText endDateTimeView = findViewById(R.id.editTextValue4);
-                EditText tagsView = findViewById(R.id.editTextValue5);
-                ImageButton closeIconButton = findViewById(R.id.imageButton3);
-
-                card.setVisibility(View.VISIBLE);
-                newTodoView.setVisibility(View.VISIBLE);
-                descriptionView.setVisibility(View.VISIBLE);
-                startDateTimeView.setVisibility(View.VISIBLE);
-                endDateTimeView.setVisibility(View.VISIBLE);
-                tagsView.setVisibility(View.VISIBLE);
-                closeIconButton.setVisibility(View.VISIBLE);
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView4, AddActivityFragment.class, null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack("name")
+                        .commit();
+                FragmentContainerView fragmentContainerView = findViewById(R.id.fragmentContainerView4);
+                fragmentContainerView.setVisibility(View.VISIBLE);
+//                TextView card = findViewById(R.id.textView2);
+//                EditText newTodoView = findViewById(R.id.editTextValue);
+//                EditText descriptionView = findViewById(R.id.editTextValue2);
+//                EditText startDateTimeView = findViewById(R.id.editTextValue3);
+//                EditText endDateTimeView = findViewById(R.id.editTextValue4);
+//                EditText tagsView = findViewById(R.id.editTextValue5);
+//                ImageButton closeIconButton = findViewById(R.id.imageButton3);
+//
+//                card.setVisibility(View.VISIBLE);
+//                newTodoView.setVisibility(View.VISIBLE);
+//                descriptionView.setVisibility(View.VISIBLE);
+//                startDateTimeView.setVisibility(View.VISIBLE);
+//                endDateTimeView.setVisibility(View.VISIBLE);
+//                tagsView.setVisibility(View.VISIBLE);
+//                closeIconButton.setVisibility(View.VISIBLE);
                 
 
             }
