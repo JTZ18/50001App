@@ -15,8 +15,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -27,36 +29,56 @@ import com.example.myapplication.databinding.ActivityExploreBinding;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.Locale;
 
-public class explore extends AppCompatActivity {
+public class explore extends FragmentActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityExploreBinding binding;
+//    private ActivityExploreBinding binding;
+    private final LinkedList<String> mWordList = new LinkedList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityExploreBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+//        binding = ActivityExploreBinding.inflate(getLayoutInflater());
+        setContentView(R.layout.activity_explore);
+
+
+        // for testing recycler view wordlist
+        for (int i = 0; i < 20; i++) {
+            mWordList.addLast("Word " + i);
+        }
+
+//        FragmentManager manager = getSupportFragmentManager();
+//        FragmentTransaction transaction = manager.beginTransaction();
+//        transaction.add(R.id.fragmentContainerView, BlankFragment.class, null);
+//        transaction.commit();
 
 
 
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        fragmentManager.beginTransaction()
+//            .add(R.id.lm_fragment, blank, null)
+//            .commit();
+//        FragmentContainerView fragmentContainerView = findViewById(R.id.lm_fragment);
 
 
-        ImageButton addTaskButton = findViewById(R.id.addTaskButton);
-        addTaskButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragmentContainerView4, AddActivityFragment.class, null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack("name")
-                        .commit();
-                FragmentContainerView fragmentContainerView = findViewById(R.id.fragmentContainerView4);
-                fragmentContainerView.setVisibility(View.VISIBLE);
+
+//        ImageButton addTaskButton = findViewById(R.id.addTaskButton);
+//        addTaskButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FragmentManager fragmentManager = getSupportFragmentManager();
+//                fragmentManager.beginTransaction()
+//                        .replace(R.id.fragmentContainerView4, AddActivityFragment.class, null)
+//                        .setReorderingAllowed(true)
+//                        .addToBackStack("name")
+//                        .commit();
+//                FragmentContainerView fragmentContainerView = findViewById(R.id.fragmentContainerView4);
+//                fragmentContainerView.setVisibility(View.VISIBLE);
 //                TextView card = findViewById(R.id.textView2);
 //                EditText newTodoView = findViewById(R.id.editTextValue);
 //                EditText descriptionView = findViewById(R.id.editTextValue2);
@@ -74,59 +96,59 @@ public class explore extends AppCompatActivity {
 //                closeIconButton.setVisibility(View.VISIBLE);
                 
 
-            }
-        });
+//            }
+//        });
 
-        ImageButton closeIconButton = findViewById(R.id.imageButton3);
-        closeIconButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView card = findViewById(R.id.textView2);
-                EditText newTodoView = findViewById(R.id.editTextValue);
-                EditText descriptionView = findViewById(R.id.editTextValue2);
-                EditText startDateTimeView = findViewById(R.id.editTextValue3);
-                EditText endDateTimeView = findViewById(R.id.editTextValue4);
-                EditText tagsView = findViewById(R.id.editTextValue5);
-                ImageButton closeIconButton = findViewById(R.id.imageButton3);
-
-                card.setVisibility(View.INVISIBLE);
-                newTodoView.setVisibility(View.INVISIBLE);
-                descriptionView.setVisibility(View.INVISIBLE);
-                startDateTimeView.setVisibility(View.INVISIBLE);
-                endDateTimeView.setVisibility(View.INVISIBLE);
-                tagsView.setVisibility(View.INVISIBLE);
-                closeIconButton.setVisibility(View.INVISIBLE);
-
-
-            }
-        });
+//        ImageButton closeIconButton = findViewById(R.id.imageButton3);
+//        closeIconButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                TextView card = findViewById(R.id.textView2);
+//                EditText newTodoView = findViewById(R.id.editTextValue);
+//                EditText descriptionView = findViewById(R.id.editTextValue2);
+//                EditText startDateTimeView = findViewById(R.id.editTextValue3);
+//                EditText endDateTimeView = findViewById(R.id.editTextValue4);
+//                EditText tagsView = findViewById(R.id.editTextValue5);
+//                ImageButton closeIconButton = findViewById(R.id.imageButton3);
+//
+//                card.setVisibility(View.INVISIBLE);
+//                newTodoView.setVisibility(View.INVISIBLE);
+//                descriptionView.setVisibility(View.INVISIBLE);
+//                startDateTimeView.setVisibility(View.INVISIBLE);
+//                endDateTimeView.setVisibility(View.INVISIBLE);
+//                tagsView.setVisibility(View.INVISIBLE);
+//                closeIconButton.setVisibility(View.INVISIBLE);
+//
+//
+//            }
+//        });
 
     }
 
-    @Override
-    protected void onStart() {
-
-        Calendar c = Calendar.getInstance();
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
-//        String currentDateTime = sdf.format(new Date());
-        int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
-
-
-        String greeting = null;
-        if(timeOfDay >= 0 && timeOfDay < 12){
-            greeting = "Morning";
-        }else if(timeOfDay >= 12 && timeOfDay < 16){
-            greeting = "Afternoon";
-        }else if(timeOfDay >= 16 && timeOfDay < 21){
-            greeting = "Evening";
-        }else if(timeOfDay >= 21 && timeOfDay < 24){
-            greeting = "Night";
-        }
-        TextView greetingView = findViewById(R.id.greeting);
-        greetingView.setText("Good " + greeting + ",");
-
-        super.onStart();
-    }
+//    @Override
+//    protected void onStart() {
+//
+//        Calendar c = Calendar.getInstance();
+////        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
+////        String currentDateTime = sdf.format(new Date());
+//        int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
+//
+//
+//        String greeting = null;
+//        if(timeOfDay >= 0 && timeOfDay < 12){
+//            greeting = "Morning";
+//        }else if(timeOfDay >= 12 && timeOfDay < 16){
+//            greeting = "Afternoon";
+//        }else if(timeOfDay >= 16 && timeOfDay < 21){
+//            greeting = "Evening";
+//        }else if(timeOfDay >= 21 && timeOfDay < 24){
+//            greeting = "Night";
+//        }
+//        TextView greetingView = findViewById(R.id.greeting);
+//        greetingView.setText("Good " + greeting + ",");
+//
+//        super.onStart();
+//    }
 
 
 //    @Override

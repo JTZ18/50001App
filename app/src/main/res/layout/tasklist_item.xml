@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageViewTaskCardComponent2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/task_card_component"
+            tools:layout_editor_absoluteY="139dp" />
+
+        <ImageButton
+            android:id="@+id/taskSettingsButton2"
+            android:layout_width="29dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="48dp"
+            android:backgroundTint="#F2F3F4"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewTaskCardComponent2"
+            app:layout_constraintStart_toEndOf="@+id/taskTitle2"
+            app:layout_constraintTop_toTopOf="@+id/taskTitle2"
+            app:srcCompat="@drawable/three_dots_more_button" />
+
+        <TextView
+            android:id="@+id/taskTitle2"
+            android:layout_width="243dp"
+            android:layout_height="24dp"
+            android:text="Revise your math today!"
+            android:textColor="#2C406E"
+            tools:layout_editor_absoluteX="63dp"
+            tools:layout_editor_absoluteY="177dp" />
+
+        <TextView
+            android:id="@+id/taskTiming2"
+            android:layout_width="92dp"
+            android:layout_height="21dp"
+            android:layout_marginBottom="60dp"
+            android:text="07:00 - 08:15"
+            android:textColor="#9AA8C7"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewTaskCardComponent2"
+            app:layout_constraintStart_toStartOf="@+id/taskTitle2" />
+
+        <View
+            android:id="@+id/taskColour2"
+            android:layout_width="2dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="51dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="#8F99EB"
+            android:backgroundTintMode="add"
+            app:layout_constraintEnd_toStartOf="@+id/taskTitle2"
+            app:layout_constraintStart_toStartOf="@+id/imageViewTaskCardComponent2"
+            app:layout_constraintTop_toTopOf="@+id/taskTitle2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
