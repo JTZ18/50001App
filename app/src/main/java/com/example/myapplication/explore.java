@@ -44,7 +44,7 @@ public class explore extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
 //        binding = ActivityExploreBinding.inflate(getLayoutInflater());
-        setContentView(R.layout.activity_explore);
+        setContentView(R.layout.fragment_blank);
 
 
         // for testing recycler view wordlist

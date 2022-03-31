@@ -39,6 +39,8 @@ public class TaskListAdapter extends
     @Override
     public void onBindViewHolder(@NonNull TaskListAdapter.TaskViewHolder holder, int position) {
 
+        String mCurrent = mTaskList.get(position);
+        holder.taskItemView.setText(mCurrent);
     }
 // --------------
     @Override
@@ -48,13 +50,17 @@ public class TaskListAdapter extends
 
     class TaskViewHolder extends RecyclerView.ViewHolder {
         public final TextView taskItemView;
-        final TaskListAdapter mAdapter;
+//        final TaskListAdapter mAdapter;
+//        private TextView view;
 
         //constructor
-        public TaskViewHolder(View itemView, TaskListAdapter adapter) {
+        public TaskViewHolder(@NonNull View itemView) {
             super(itemView);
             taskItemView = itemView.findViewById(R.id.taskTitle);
-            this.mAdapter = adapter;
+        }
+
+        public TextView getView(){
+            return taskItemView;
         }
     }
 }
