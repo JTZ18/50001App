@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.os.Bundle;
 
+import com.example.myapplication.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -32,10 +33,10 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.Locale;
 
-public class explore extends FragmentActivity {
+public class explore extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-//    private ActivityExploreBinding binding;
+    private ActivityExploreBinding binding;
     private final LinkedList<String> mWordList = new LinkedList<>();
 
 
@@ -44,12 +45,18 @@ public class explore extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
 //        binding = ActivityExploreBinding.inflate(getLayoutInflater());
-        setContentView(R.layout.fragment_blank);
+//        setContentView(R.layout.fragment_blank);
+        binding = ActivityExploreBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
 
-        // for testing recycler view wordlist
-        for (int i = 0; i < 20; i++) {
-            mWordList.addLast("Word " + i);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        // TODO: need to setup the navcontroller properly and indicate in nav_grpah starting fragment
+
+
+
         }
 
 //        FragmentManager manager = getSupportFragmentManager();
@@ -157,4 +164,3 @@ public class explore extends FragmentActivity {
 //        return NavigationUI.navigateUp(navController, appBarConfiguration)
 //                || super.onSupportNavigateUp();
 //    }
-}

@@ -2,7 +2,9 @@ package com.example.myapplication;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,51 +12,41 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.myapplication.models.TaskListAdapter;
+import com.example.myapplication.databinding.FragmentFirstBinding;
 
 import java.util.LinkedList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BlankFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class BlankFragment extends Fragment {
 
-    private LinkedList<String> taskList = new LinkedList<>();
-    private LinkedList<String> mTaskList;
-    private RecyclerView mRecyclerView;
-    private TaskListAdapter mAdapter;
-
-    // Add RecyclerView member
-    private RecyclerView recyclerView;
+    private FragmentFirstBinding binding;
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        mTaskList.add("hi");
-        mTaskList.add("there");
 
+        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        return binding.getRoot();
 
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_blank, container, false);
+    }
 
-        // Add the following lines to create RecyclerView
-        recyclerView = view.findViewById(R.id.recyclerview);
-        recyclerView.setAdapter(new TaskListAdapter(view.getContext(), mTaskList));
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-//        // Get a handle to the RecyclerView.
-//        mRecyclerView = view.findViewById(R.id.recyclerview);
-//        // Create an adapter and supply the data to be displayed.
-//        mAdapter = new TaskListAdapter(view.getContext(), mTaskList);
-//        // Connect the adapter with the RecyclerView.
-//        mRecyclerView.setAdapter(mAdapter);
-//        // Give the RecyclerView a default layout manager.
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(BlankFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+            }
+        });
+    }
 
-        return view;
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 
 }
