@@ -9,18 +9,20 @@ public class Task {
     private String color;
     private LocalDateTime startDateTime;
     private LocalDateTime endDateTime;
-    private ArrayList<String> tags;
     private String status = "Not Done"; // either "Not Done" or "Completed"
+    private String subject;
+    private String tag;
 
     //constructor
-    public Task(String title, String description, String color, LocalDateTime startDateTime, LocalDateTime endDateTime, ArrayList<String> tags, String status) {
+    public Task(String title, String description, String color, LocalDateTime startDateTime, LocalDateTime endDateTime, String subject, String tag, String status) {
         this.title = title;
         this.description = description;
         this.color = color;
+        this.status = status;
+        this.subject = subject;
+        this.tag = tag;
         this.startDateTime = startDateTime;
         this.endDateTime = endDateTime;
-        this.tags = tags;
-        this.status = status;
     }
 
     //getters and setters
@@ -64,14 +66,6 @@ public class Task {
         this.endDateTime = endDateTime;
     }
 
-    public ArrayList<String> getTags() {
-        return tags;
-    }
-
-    public void setTags(ArrayList<String> tags) {
-        this.tags = tags;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -79,5 +73,13 @@ public class Task {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public String getSubject() { return subject; }
+
+    public void setSubject(String subject) { this.subject = subject; }
+
+    public String getTag() { return this.tag; }
+
+    public void getTag(String tag) { this.tag = tag; }
 
 }
