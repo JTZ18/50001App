@@ -3,29 +3,29 @@ package com.example.myapplication.models;
 import java.util.ArrayList;
 
 public class Tasks {
-    private ArrayList<Task> tasks;
+    private ArrayList<UserTask> userTasks;
 
     //getters and setters
-    public ArrayList<Task> getTasks() {
-        return tasks;
+    public ArrayList<UserTask> getTasks() {
+        return userTasks;
     }
-    public void setTasks(ArrayList<Task> tasks) {
-        this.tasks = tasks;
+    public void setTasks(ArrayList<UserTask> userTasks) {
+        this.userTasks = userTasks;
     }
 
     //constructor
     public Tasks() {
-        this.tasks = new ArrayList<Task>();
+        this.userTasks = new ArrayList<UserTask>();
     }
 
     //methods
-    public void addTask(Task task) {
-        this.tasks.add(task);
+    public void addTask(UserTask userTask) {
+        this.userTasks.add(userTask);
     }
-    public void removeTask(Task task) {
-        this.tasks.remove(task);
+    public void removeTask(UserTask userTask) {
+        this.userTasks.remove(userTask);
     }
-    public Task getTask(int position) { return this.tasks.get(position); }
-    public int getSize() { return this.tasks.size(); }
+    public UserTask getTask(int position) { return this.userTasks.get(position); }
+    public int getSize() { return this.userTasks.size(); }
 
 }

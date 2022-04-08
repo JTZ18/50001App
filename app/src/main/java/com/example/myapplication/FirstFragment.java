@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.databinding.FragmentFirstBinding;
 import com.example.myapplication.models.RecyclerItemClickListener;
-import com.example.myapplication.models.Task;
+import com.example.myapplication.models.UserTask;
 import com.example.myapplication.models.TaskListAdapter;
 import com.example.myapplication.models.Tasks;
 
@@ -67,32 +67,32 @@ public class FirstFragment extends Fragment {
         String status1 = "Not Done";
         String status2 = "Completed";
         LocalDateTime rightnow = LocalDateTime.now();
-        Task task1 = new Task("Revise math", "I hate math", "orange", rightnow, rightnow, "Science", tag1, "Not Done");
-        Task task2 = new Task("test2", "i love math", "blue", rightnow, rightnow, "Math", tag2, "Not Done");
-        Task task3 = new Task("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
-        Task task4 = new Task("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
-        Task task5 = new Task("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
-        Task task6 = new Task("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
-        Task task7 = new Task("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
-        Task task8 = new Task("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
-        Task task9 = new Task("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
-        Task task10 = new Task("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
-        Task task11 = new Task("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
-        Task task12 = new Task("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
-        Task task13 = new Task("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
-        tasks.addTask(task1);
-        tasks.addTask(task2);
-        tasks.addTask(task3);
-        tasks.addTask(task4);
-        tasks.addTask(task5);
-        tasks.addTask(task6);
-        tasks.addTask(task7);
-        tasks.addTask(task8);
-        tasks.addTask(task9);
-        tasks.addTask(task10);
-        tasks.addTask(task11);
-        tasks.addTask(task12);
-        tasks.addTask(task13);
+        UserTask userTask1 = new UserTask("Revise math", "I hate math", "orange", rightnow, rightnow, "Science", tag1, "Not Done");
+        UserTask userTask2 = new UserTask("test2", "i love math", "blue", rightnow, rightnow, "Math", tag2, "Not Done");
+        UserTask userTask3 = new UserTask("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
+        UserTask userTask4 = new UserTask("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
+        UserTask userTask5 = new UserTask("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
+        UserTask userTask6 = new UserTask("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
+        UserTask userTask7 = new UserTask("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
+        UserTask userTask8 = new UserTask("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
+        UserTask userTask9 = new UserTask("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
+        UserTask userTask10 = new UserTask("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
+        UserTask userTask11 = new UserTask("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
+        UserTask userTask12 = new UserTask("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
+        UserTask userTask13 = new UserTask("jefifjeioajfoej", "feijfoiajfngi", "blue", rightnow, rightnow, "physics", tag3, "Not Done");
+        tasks.addTask(userTask1);
+        tasks.addTask(userTask2);
+        tasks.addTask(userTask3);
+//        tasks.addTask(task4);
+//        tasks.addTask(task5);
+//        tasks.addTask(task6);
+//        tasks.addTask(task7);
+//        tasks.addTask(task8);
+//        tasks.addTask(task9);
+//        tasks.addTask(task10);
+//        tasks.addTask(task11);
+//        tasks.addTask(task12);
+//        tasks.addTask(task13);
 
 
 

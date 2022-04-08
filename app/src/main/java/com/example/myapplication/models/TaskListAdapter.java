@@ -60,18 +60,18 @@ public class TaskListAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
         if (position != tasks.getSize()) {
-            Task task;
+            UserTask userTask;
             //        holder.getView().setText(kode[position]);
             //        holder.getView_title().setText(String.valueOf(random.nextInt()));
             holder.getView_tag1().setText(String.valueOf(random.nextInt()));
 
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm a");
-            task = tasks.getTask(position);
-            holder.getView().setText(task.getStartDateTime().format(formatter));
-            holder.getView_title().setText(task.getTitle());
-            holder.getView_tag1().setText(task.getTag());
-            holder.getView_tag2().setText(task.getSubject());
+            userTask = tasks.getTask(position);
+            holder.getView().setText(userTask.getStartDateTime().format(formatter));
+            holder.getView_title().setText(userTask.getTitle());
+            holder.getView_tag1().setText(userTask.getTag());
+            holder.getView_tag2().setText(userTask.getSubject());
         }
 
     }
